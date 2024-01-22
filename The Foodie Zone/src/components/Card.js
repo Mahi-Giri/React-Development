@@ -1,19 +1,20 @@
-import { RATING_LOGO } from "../utils/constant";
+import { RATING_LOGO, CARD_IMAGE } from "../utils/constant";
 
 const Card = (props) => {
     const { data } = props;
+    console.log(data);
     return (
         <div className="card">
-            <img src={data.img} />
+            <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${data.info.cloudinaryImageId}`} />
             <div className="info">
-                <h3>{data.Name}</h3>
+                <h3>{data.info.name}</h3>
                 <div className="rating">
                     <img src={RATING_LOGO} />
-                    <h4>{data.rating} •</h4>
-                    <h4>{data.time} mins</h4>
+                    <h4>{data.info.avgRating} •</h4>
+                    <h4>{data.info.sla.deliveryTime} mins</h4>
                 </div>
-                <p>{data.dishName}</p>
-                <p> {data.place} </p>
+                <p>{data.info.cuisines}</p>
+                <p> {data.info.locality} </p>
             </div>
         </div>
     );
