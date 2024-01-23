@@ -13,7 +13,7 @@ const Main = () => {
             "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
         );
         const json = await data.json();
-        setRestaurantList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+        setRestaurantList(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
     return (
@@ -23,10 +23,11 @@ const Main = () => {
                     className="filter-btn"
                     onClick={() => {
                         const filteredList = restaurantList.filter((restaurant) => {
-                            return restaurant.rating > 4;
+                            return restaurant.info.avgRatingString > 4;
                         });
                         setRestaurantList(filteredList);
-                    }}>
+                    }}
+                >
                     Top Rated
                 </button>
             </div>
