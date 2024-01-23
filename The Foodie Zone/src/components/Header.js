@@ -1,6 +1,9 @@
 import { APP_LOGO } from "../utils/constant";
+import { useState } from "react";
 
 const Header = () => {
+    const [button, setButton] = useState("Login", "bi-box-arrow-in-right");
+
     return (
         <div className="header">
             <div className="logo-container">
@@ -18,12 +21,24 @@ const Header = () => {
                         <span>Help</span>
                     </li>
                     <li>
+                        <i className="bi bi-cart"></i>
+                        <span>Card</span>
+                    </li>
+                    <li>
                         <i className="bi bi-person"></i>
                         <span>Mahi</span>
                     </li>
                     <li>
-                        <i className="bi bi-cart"></i>
-                        <span>Card</span>
+                        <span
+                            onClick={() => {
+                                if (button == "Login") {
+                                    setButton("Logout");
+                                } else {
+                                    setButton("Login");
+                                }
+                            }}>
+                            {button}
+                        </span>
                     </li>
                 </ul>
             </div>
