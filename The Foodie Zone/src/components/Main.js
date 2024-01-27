@@ -1,11 +1,10 @@
 import Card from "./Card";
 import { useState, useEffect } from "react";
 import Shimmar from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Main = () => {
     const [restaurantList, setRestaurantList] = useState([]);
-    const [searchText, setSearchText] = useState("");
-    const [filtedRestaurant, setfiltedRestaurant] = useState([]);
 
     useEffect(() => {
         fetchData();
@@ -17,7 +16,7 @@ const Main = () => {
         );
         const json = await data.json();
         setRestaurantList(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setfiltedRestaurant(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        console.log(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
     if (restaurantList.length === 0) {
@@ -35,31 +34,16 @@ const Main = () => {
                         });
                         setRestaurantList(filteredList);
                     }}>
-                    Top Rated
+                    Filter
                 </button>
-                <div className="search_bar">
-                    <input
-                        type="text"
-                        placeholder="Search..."
-                        value={searchText}
-                        onChange={(event) => {
-                            setSearchText(event.target.value);
-                        }}
-                    />
-                    <button
-                        onClick={() => {
-                            const filtedRestaurants = restaurantList.filter((restaurant) =>
-                                restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
-                            );
-                            setfiltedRestaurant(filtedRestaurants);
-                        }}>
-                        Search
-                    </button>
-                </div>
             </div>
             <div className="restaurant-container">
-                {filtedRestaurant.map((restaurant) => {
-                    return <Card key={restaurant.id} data={restaurant} />;
+                {restaurantList.map((restaurant) => {
+                    return (
+                        <Link key={restaurant?.id} to={"/restaurants/" + restaurant?.info?.parentId}>
+                            <Card data={restaurant} />
+                        </Link>
+                    );
                 })}
             </div>
         </div>
