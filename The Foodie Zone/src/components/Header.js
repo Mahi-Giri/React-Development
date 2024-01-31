@@ -33,12 +33,18 @@ const Header = () => {
                             <span>Contact US</span>
                         </Link>
                     </li>
-                    {/* <li>
+                    <li>
+                        <Link to="/lazyloading" className="link">
+                            <i className="bi bi-person"></i>
+                            <span>Lazy Loading</span>
+                        </Link>
+                    </li>
+                    <li>
                         <Link to="/about" className="link">
                             <i className="bi bi-question-circle"></i>
                             <span>About</span>
                         </Link>
-                    </li> */}
+                    </li>
                     <li>
                         <i className="bi bi-person"></i>
                         <span>Mahi</span>

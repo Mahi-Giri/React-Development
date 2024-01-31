@@ -41,7 +41,7 @@ body {
 
 .nav-item ul li {
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .nav-item ul li .link {
@@ -56,7 +56,7 @@ body {
 
 .nav-item ul li .bi {
     margin-right: 8px;
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 
 .main {

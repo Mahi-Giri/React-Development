@@ -1,21 +1,10 @@
-import { useEffect, useState } from "react";
-import Shimmar from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { RES_START_URL, RES_END_URL } from "../utils/constant";
+import useRestorantData from "../utils/useRestorantData";
+import Shimmar from "./Shimmer";
 
 const RestaurantMenu = () => {
-    const [restaurantData, setRestaurantData] = useState(null);
-    useEffect(() => {
-        fetchMenu();
-    }, []);
     const { resId } = useParams();
-
-    const fetchMenu = async () => {
-        const data = await fetch(RES_START_URL + resId + RES_END_URL);
-        const json = await data.json();
-
-        setRestaurantData(json.data);
-    };
+    const restaurantData = useRestorantData(resId);
 
     if (restaurantData === null) {
         return <Shimmar />;
@@ -41,8 +30,6 @@ const RestaurantMenu = () => {
                 <h1>{sla.slaString}</h1>
                 <h1>{costForTwoMessage}</h1>
             </div>
-
-            <div className="dash"></div>
 
             <h2 id="title">{`${title} (${itemCards.length})`}</h2>
 
