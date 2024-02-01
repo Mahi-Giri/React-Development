@@ -44,9 +44,9 @@ const Main = () => {
                 </button>
             </div>
             <div className="restaurant-container">
-                {restaurantList.map((restaurant) => {
+                {restaurantList.map((restaurant, index) => {
                     return (
-                        <Link key={restaurant?.id} to={"/restaurants/" + restaurant?.info?.parentId}>
+                        <Link key={restaurant?.id ?? index} to={"/restaurants/" + restaurant?.info?.parentId}>
                             <Card data={restaurant} />
                         </Link>
                     );
