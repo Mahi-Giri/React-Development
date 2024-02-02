@@ -236,53 +236,53 @@ body {
 
 }
 
-.application .menu {
+.menu {
     width: 40%;
     margin: 0 auto;
     margin-top: 2rem;
     padding: 1rem;
 }
 
-.application .menu h1 {
+.menu h1 {
     font-size: 1.1rem;
     margin-bottom: 10px;
 }
 
-.application .menu p {
+.menu p {
     font-size: 0.8rem;
     color: #86808C;
 }
 
-.application .menu span {
+.menu span {
     font-size: 0.8rem;
     color: #86808C;
     margin-right: 5px;
 }
 
-.application .menu :nth-child(5) {
+.menu :nth-child(5) {
     display: flex;
     gap: 6px;
     align-items: center;
     margin-top: 1.5rem;
 }
 
-.application .menu .dash {
+.menu .dash {
     margin-top: 1.5rem;
     border: 1px solid #696464;
 }
 
-.application .menu :nth-child(7) {
+.menu :nth-child(7) {
     display: flex;
     gap: 20px;
     align-items: center;
     margin: 0.7rem 0;
 }
 
-.application .menu :nth-child(7) h1 {
+.menu :nth-child(7) h1 {
     font-size: 0.9rem;
 }
 
-.application .menu h2 {
+.menu h2 {
     font-size: 0.9rem;
     margin-top: 1rem;
 }

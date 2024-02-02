@@ -13,10 +13,10 @@ const LazyLoading = lazy(() => import("./components/LazyLoading"));
 
 const AppLayout = () => {
     return (
-        <div className="application">
+        <>
             <Header />
             <Outlet />
-        </div>
+        </>
     );
 };
 
