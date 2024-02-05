@@ -5,7 +5,7 @@ const Card = (props) => {
     const { cloudinaryImageId, name, avgRating, cuisines, locality, sla } = data?.info;
 
     return (
-        <div className="card">
+        <div className="card w-full p-4 flex flex-col gap-4">
             <img src={CARD_IMAGE + cloudinaryImageId} />
             <div className="info">
                 <h3>{name}</h3>
@@ -19,6 +19,19 @@ const Card = (props) => {
             </div>
         </div>
     );
+};
+
+// Higher Order components
+
+export const withOpenLabel = (Card) => {
+    return (props) => {
+        return (
+            <div className="label">
+                <label>Opened</label>
+                <Card {...props} />
+            </div>
+        );
+    };
 };
 
 export default Card;

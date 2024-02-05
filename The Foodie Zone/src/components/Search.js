@@ -20,10 +20,11 @@ const Search = () => {
     };
 
     return (
-        <div className="main">
-            <div className="filter">
-                <div className="search_bar">
+        <div className="flex flex-col justify-center items-center my-4">
+            <div className="flex justify-between item-center my-4 w-9/12">
+                <div className="flex w-3/5 m-auto shadow-md h-9 my-8 rounded-sm">
                     <input
+                        className="w-full h-full outline-0 text-base px-3"
                         type="text"
                         placeholder="Search for restaurants and food..."
                         value={searchText}
@@ -32,6 +33,7 @@ const Search = () => {
                         }}
                     />
                     <button
+                        className="text-base px-4 outline-1 bg-gray-500 text-white rounded-e-sm"
                         onClick={() => {
                             const filtedRestaurants = restaurantList.filter((restaurant) =>
                                 restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -42,7 +44,7 @@ const Search = () => {
                     </button>
                 </div>
             </div>
-            <div className="search-container">
+            <div className="flex">
                 {filtedRestaurant.map((restaurant) => {
                     return <Search_Card key={restaurant.id} data={restaurant} />;
                 })}

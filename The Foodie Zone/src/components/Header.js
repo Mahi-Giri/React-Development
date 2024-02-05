@@ -1,59 +1,53 @@
 import { APP_LOGO } from "../utils/constant";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import Contact from "./Contact";
-import About from "./About";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
     const [button, setButton] = useState("Login");
+    const { loggedInUser } = useContext(UserContext);
 
     return (
-        <div className="header flex justify-between border-2 max-w-7xl items-center px-0">
-            <div className="logo-container">
-                <img className="logo w-24" src={APP_LOGO} />
+        <div className="flex shadow-md justify-between h-16 p-1">
+            <div className="w-28 h-auto mx-40">
+                <img src={APP_LOGO} />
             </div>
 
-            <div className="nav-item">
-                <ul className="flex my-3">
-                    <li className="mx-3">
-                        <Link to="/search" className="link">
-                            <i className="bi bi-search mx-1"></i>
+            <div className="mx-40 m-auto">
+                <ul className="flex gap-4">
+                    <li className="hover:bg-gray-100 px-1 cursor-pointer">
+                        <Link to="/search">
+                            <i className="bi bi-search pe-2"></i>
                             <span>Search</span>
                         </Link>
                     </li>
-                    <li className="mx-3">
-                        <Link to="/" className="link">
-                            <i className="bi bi-house mx-1"></i>
+                    <li className="hover:bg-gray-100 px-1 cursor-pointer">
+                        <Link to="/">
+                            <i className="bi bi-house pe-2"></i>
                             <span>Home</span>
                         </Link>
                     </li>
-                    <li className="mx-3">
-                        <Link to="/contact" className="link">
-                            <i className="bi bi-person mx-1"></i>
+                    <li className="hover:bg-gray-100 px-1 cursor-pointer">
+                        <Link to="/contact">
+                            <i className="bi bi-person pe-2"></i>
                             <span>Contact US</span>
                         </Link>
                     </li>
-                    <li className="mx-3">
-                        <Link to="/lazyloading" className="link">
-                            <i className="bi bi-person mx-1"></i>
-                            <span>Lazy Loading</span>
-                        </Link>
-                    </li>
-                    <li className="mx-3">
-                        <Link to="/about" className="link">
-                            <i className="bi bi-question-circle mx-1"></i>
+                    <li className="hover:bg-gray-100 px-1 cursor-pointer">
+                        <Link to="/about">
+                            <i className="bi bi-question-circle pe-2"></i>
                             <span>About</span>
                         </Link>
                     </li>
-                    <li className="mx-3">
-                        <i className="bi bi-person mx-1"></i>
-                        <span>Mahi</span>
-                    </li>
-                    <li className="mx-3">
-                        <i className="bi bi-cart mx-1"></i>
+                    <li className="hover:bg-gray-100 px-1 cursor-pointer">
+                        <i className="bi bi-cart pe-2"></i>
                         <span>Card</span>
                     </li>
-                    <li className="mx-3">
+                    <li className="hover:bg-gray-100 px-1 cursor-pointer">
+                        <i className="bi bi-person pe-2"></i>
+                        <span className="font-bold">{loggedInUser}</span>
+                    </li>
+                    <li className="hover:bg-gray-100 px-1 cursor-pointer">
                         <span
                             onClick={() => {
                                 if (button == "Login") {

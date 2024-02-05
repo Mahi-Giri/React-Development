@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card, { withOpenLabel } from "./Card";
 import { useState, useEffect } from "react";
 import Shimmar from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -10,6 +10,8 @@ const Main = () => {
     useEffect(() => {
         fetchData();
     }, []);
+
+    const RestaurantOpened = withOpenLabel(Card);
 
     const fetchData = async () => {
         const data = await fetch(
@@ -30,24 +32,12 @@ const Main = () => {
     }
 
     return (
-        <div className="main">
-            <div className="filter">
-                <button
-                    className="filter-btn"
-                    onClick={() => {
-                        const filteredList = restaurantList.filter((restaurant) => {
-                            return restaurant.info.avgRatingString > 4;
-                        });
-                        setRestaurantList(filteredList);
-                    }}>
-                    Filter
-                </button>
-            </div>
+        <div className="main flex flex-col justify-center items-center my-4">
             <div className="restaurant-container">
                 {restaurantList.map((restaurant, index) => {
                     return (
                         <Link key={restaurant?.id ?? index} to={"/restaurants/" + restaurant?.info?.parentId}>
-                            <Card data={restaurant} />
+                            {restaurant.info.isOpen ? <RestaurantOpened data={restaurant} /> : <Card data={restaurant} />}
                         </Link>
                     );
                 })}
