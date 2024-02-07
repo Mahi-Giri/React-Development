@@ -9,6 +9,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./redux/appStore";
 
 const LazyLoading = lazy(() => import("./components/LazyLoading"));
 
@@ -21,12 +23,14 @@ const AppLayout = () => {
         setUser_name(data.loggedInUser);
     }, []);
     return (
-        <UserContext.Provider value={{ loggedInUser: user_name }}>
-            <>
-                <Header />
-                <Outlet />
-            </>
-        </UserContext.Provider>
+        <Provider store={appStore}>
+            <UserContext.Provider value={{ loggedInUser: user_name }}>
+                <>
+                    <Header />
+                    <Outlet />
+                </>
+            </UserContext.Provider>
+        </Provider>
     );
 };
 

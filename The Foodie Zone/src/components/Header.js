@@ -2,10 +2,12 @@ import { APP_LOGO } from "../utils/constant";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const [button, setButton] = useState("Login");
     const { loggedInUser } = useContext(UserContext);
+    const cartItems = useSelector((store) => store.cart.items);
 
     return (
         <div className="flex shadow-md justify-between h-16 p-1">
@@ -41,7 +43,7 @@ const Header = () => {
                     </li>
                     <li className="hover:bg-gray-100 px-1 cursor-pointer">
                         <i className="bi bi-cart pe-2"></i>
-                        <span>Card</span>
+                        <span>Card ({cartItems.length})</span>
                     </li>
                     <li className="hover:bg-gray-100 px-1 cursor-pointer">
                         <i className="bi bi-person pe-2"></i>
