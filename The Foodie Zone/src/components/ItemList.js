@@ -5,7 +5,7 @@ import { ITEM_IMG } from "../utils/constant";
 const ItemList = ({ items }) => {
     const dispatch = useDispatch();
     const handleAddItem = (item) => {
-        dispatch(addItem());
+        dispatch(addItem(item));
     };
     return (
         <div>
@@ -24,7 +24,7 @@ const ItemList = ({ items }) => {
                     </div>
                     <div className="flex flex-col my-2">
                         <img className="w-32 h-32 rounded-md my-2" src={ITEM_IMG + item.card.info.imageId} />
-                        <button className="border border-gray-300 text-[#60B246] rounded-sm bg-white" onClick={handleAddItem}>
+                        <button className="border border-gray-300 text-[#60B246] rounded-sm bg-white" onClick={() => handleAddItem(item)}>
                             ADD
                         </button>
                     </div>

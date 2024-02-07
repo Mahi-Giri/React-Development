@@ -11,6 +11,7 @@ import Error from "./components/Error";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./redux/appStore";
+import Cart from "./components/Cart";
 
 const LazyLoading = lazy(() => import("./components/LazyLoading"));
 
@@ -66,6 +67,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu />,
+            },
+            {
+                path: "/cart",
+                element: <Cart />,
             },
         ],
         errorElement: <Error />,

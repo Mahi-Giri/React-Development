@@ -42,8 +42,10 @@ const Header = () => {
                         </Link>
                     </li>
                     <li className="hover:bg-gray-100 px-1 cursor-pointer">
-                        <i className="bi bi-cart pe-2"></i>
-                        <span>Card ({cartItems.length})</span>
+                        <Link to="/cart">
+                            <i className="bi bi-cart pe-2"></i>
+                            <span>Card ({cartItems.length})</span>
+                        </Link>
                     </li>
                     <li className="hover:bg-gray-100 px-1 cursor-pointer">
                         <i className="bi bi-person pe-2"></i>
@@ -57,7 +59,8 @@ const Header = () => {
                                 } else {
                                     setButton("Login");
                                 }
-                            }}>
+                            }}
+                        >
                             {button}
                         </span>
                     </li>
