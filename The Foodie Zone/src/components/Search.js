@@ -26,6 +26,7 @@ const Search = () => {
                     <input
                         className="w-full h-full outline-0 text-base px-3"
                         type="text"
+                        data-testid="searchInput"
                         placeholder="Search for restaurants and food..."
                         value={searchText}
                         onChange={(event) => {
@@ -39,14 +40,15 @@ const Search = () => {
                                 restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
                             );
                             setfiltedRestaurant(filtedRestaurants);
-                        }}>
+                        }}
+                    >
                         Search
                     </button>
                 </div>
             </div>
-            <div className="flex">
-                {filtedRestaurant.map((restaurant) => {
-                    return <Search_Card key={restaurant.id} data={restaurant} />;
+            <div data-testid="card" className="flex">
+                {filtedRestaurant.map((restaurant,index) => {
+                    return <Search_Card key={index} data={restaurant} />;
                 })}
             </div>
         </div>

@@ -138,6 +138,10 @@ body {
     margin-left: 3px;
 }
 
+.main .restaurant-container .card .info > h4 {
+    font-size: 0.8rem;
+}
+
 .main .restaurant-container .card .info p {
     color: grey;
     font-size: 0.8rem;
