@@ -1,7 +1,7 @@
-import "./App.css";
+import Main from "./components/Main";
 
 function App() {
-    return <div className="text-2xl font-bold m-auto">Not Rendered</div>;
+    return <Main />;
 }
 
 export default App;
