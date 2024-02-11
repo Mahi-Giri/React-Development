@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Header from "./Header";
+import { checkValidData } from "../Utils/validate";
 
 const Login = () => {
     const [isSignIn, setIsSignIn] = useState(true);
+    const [errorMessage, setErrorMessage] = useState(null);
+
+    const email = useRef(null);
+    const password = useRef(null);
 
     const toggleSignIn = (event) => {
         setIsSignIn(!isSignIn);
     };
-    console.log(isSignIn);
+
+    const handleButtonClick = (event) => {
+        event.preventDefault();
+        const errorMessage = checkValidData(email.current.value, password.current.value);
+        setErrorMessage(errorMessage);
+    };
 
     return (
         <div>
@@ -29,16 +39,21 @@ const Login = () => {
                         />
                     )}
                     <input
+                        ref={email}
                         className="py-2 px-3 w-full border-none rounded-md outline-none text-sm bg-gray-300"
                         type="text"
                         placeholder="Email or phone number"
                     />
                     <input
+                        ref={password}
                         className="py-2 px-3 w-full border-none rounded-md outline-none text-sm bg-gray-300"
                         type="password"
                         placeholder="Password"
                     />
-                    <button className="py-2 text-sm bg-red-700 w-full text-white rounded-md mt-4">{isSignIn ? "Sign In" : "Sign Up"}</button>
+                    <p className="text-red-600 text-sm font-bold pt-1">{errorMessage}</p>
+                    <button className="py-2 text-sm bg-red-700 w-full text-white rounded-md mt-4" onClick={handleButtonClick}>
+                        {isSignIn ? "Sign In" : "Sign Up"}
+                    </button>
                     <div className="flex justify-between text-white text-xs">
                         <div className="flex">
                             <input type="checkbox" id="input" className="mr-1" />
