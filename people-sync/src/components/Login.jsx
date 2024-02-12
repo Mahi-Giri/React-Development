@@ -63,7 +63,7 @@ const Login = () => {
                     </div>
                     <div className="text-gray-300 mt-10 mb-16">
                         <p className="text-xs">
-                            <span className="font-bold text-sm ml-1 cursor-pointer" onClick={toggleSignIn}>
+                            <span className="font-bold text-sm cursor-pointer" onClick={toggleSignIn}>
                                 {isSignIn ? "New to Netflix? Sign up now." : "You already have a account. Sign In"}
                             </span>
                         </p>
