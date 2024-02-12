@@ -1,0 +1,6 @@
+[submodule "people-sync"]
+	path = people-sync
+	url = https://github.com/Mahi-Giri/people-sync.git
+[submodule "The-Foodie-Zone"]
+	path = The-Foodie-Zone
+	url = https://github.com/Mahi-Giri/The-Foodie-Zone.git
