@@ -9,7 +9,7 @@ const Login = () => {
     const email = useRef(null);
     const password = useRef(null);
 
-    const toggleSignIn = (event) => {
+    const toggleSignIn = () => {
         setIsSignIn(!isSignIn);
     };
 
@@ -23,7 +23,7 @@ const Login = () => {
         <div>
             <Header />
             <div className="absolute">
-                <img
+                <img className="w-screen h-screen"
                     src="https://assets.nflxext.com/ffe/siteui/vlv3/5e16108c-fd30-46de-9bb8-0b4e1bbbc509/29d8d7d7-83cc-4b5f-aa9b-6fd4f68bfaa6/IN-en-20240205-popsignuptwoweeks-perspective_alpha_website_small.jpg"
                     alt="bg-img"
                 />
@@ -57,9 +57,9 @@ const Login = () => {
                     <div className="flex justify-between text-white text-xs">
                         <div className="flex">
                             <input type="checkbox" id="input" className="mr-1" />
-                            <label htmlFor="input">Remember me</label>
+                            <label htmlFor="input" className="cursor-pointer">Remember me</label>
                         </div>
-                        <span className="">Need help?</span>
+                        <span className="cursor-pointer">Need help?</span>
                     </div>
                     <div className="text-gray-300 mt-10 mb-16">
                         <p className="text-xs">
@@ -68,7 +68,7 @@ const Login = () => {
                             </span>
                         </p>
                         <p className="text-xs mt-4 ">
-                            This page protrcted by Google reCAPTCHA to ensure you're not a bot. <span className="text-blue-500">Learn More</span>
+                            This page protrcted by Google reCAPTCHA to ensure you're not a bot. <span className="text-blue-500 cursor-pointer">Learn More</span>
                         </p>
                     </div>
                 </form>
