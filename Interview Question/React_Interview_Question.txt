@@ -1,0 +1,20 @@
+1. What is React?
+2. What are the advantages of using React?
+3. What are the limitations of React?
+4. What is useState() in React?
+5. What are keys in React?
+6. What is JSX?
+7. What are the differences between functional and class components?
+8. What is the virtual DOM? How does react use the virtual DOM to render the UI?
+9. What are the differences between controlled and uncontrolled components?
+10. What are props in React?
+11. Explain React state and props.
+12. Explain about types of side effects in React component.
+13. What is prop drilling in React?
+14. What are error boundaries?
+15. What is React Hooks?
+16. Explain React Hooks.
+17. What are the rules that must be followed while using React Hooks?
+18. What is the use of useEffect React Hooks?
+19. Why do React Hooks make use of refs?
+20. What are Custom Hooks?

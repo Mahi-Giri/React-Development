@@ -1,0 +1,34 @@
+1. What are the different data types present in javascript?
+2. Explain Hoisting in javascript.
+3. Why do we use the word “debugger” in javascript?
+4. Difference between “ == “ and “ === “ operators.
+5. Difference between var and let keyword in javascript.
+6. Explain Implicit Type Coercion in javascript.
+7. Is javascript a statically typed or a dynamically typed language?
+8. What is NaN property in JavaScript?
+9. Explain passed by value and passed by reference.
+10. What is an Immediately Invoked Function in JavaScript?
+11. What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
+12. Explain Higher Order Functions in javascript.
+13. Explain “this” keyword.
+14. What do you mean by Self Invoking Functions?
+15. Explain call(), apply() and, bind() methods.
+16. What is the difference between exec () and test () methods in javascript?
+17. What is currying in JavaScript?
+18. What are some advantages of using External JavaScript?
+19. Explain Scope and Scope Chain in javascript.
+20. Explain Closures in JavaScript.
+21. Mention some advantages of javascript.
+22. What are object prototypes?
+23. What are callbacks?
+24. What are the types of errors in javascript?
+25. What is memoization?
+26. What is recursion in a programming language?
+27. What is the use of a constructor function in javascript?
+28. What is DOM?
+29. Which method is used to retrieve a character from a certain index?
+30. What do you mean by BOM?
+31. What is the distinction between client-side and server-side JavaScript?
+32. Differences between declaring variables using var, let and const.
+33. What is the rest parameter and spread operator?
+34. What is the use of promises in javascript?
