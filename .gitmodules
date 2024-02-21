@@ -4,3 +4,6 @@
 [submodule "The-Foodie-Zone"]
 	path = The-Foodie-Zone
 	url = https://github.com/Mahi-Giri/The-Foodie-Zone.git
+[submodule "youtube-clone"]
+	path = youtube-clone
+	url = https://github.com/Mahi-Giri/youtube-clone.git
